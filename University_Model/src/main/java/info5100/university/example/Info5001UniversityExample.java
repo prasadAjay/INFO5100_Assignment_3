@@ -6,6 +6,8 @@
 package info5100.university.example;
 
 import com.github.javafaker.Faker;
+import info5100.university.alumni.AlumniProfile;
+import info5100.university.alumni.EmployementRecord;
 import info5100.university.example.CourseCatalog.Course;
 import info5100.university.example.CourseSchedule.CourseLoad;
 import info5100.university.example.CourseSchedule.CourseOffer;
@@ -33,6 +35,7 @@ public class Info5001UniversityExample {
     public static void main(String[] args) {
         // TODO code application logic here
         Faker fakerPkg = new Faker();
+        
         Department department = new Department("Information Systems");
 
         Course course = department.newCourse("app eng", "info 5100", 4);
@@ -60,6 +63,9 @@ public class Info5001UniversityExample {
             CourseLoad courseload = student.newCourseLoad("Fall2020");
             courseload.newSeatAssignment(courseoffer); //register student in class
             
+            AlumniProfile alumni = new AlumniProfile(student);
+            EmployementRecord emp = new EmployementRecord(alumni);
+        
             // To calculate Final GPA for each student
             ArrayList<Seat> seatListAED = courseoffer.getSeatlist();
             for (Seat seat : seatListAED) {
@@ -71,13 +77,16 @@ public class Info5001UniversityExample {
             }
             System.out.println("Student NUID: " + person.getPersonId());
             System.out.println("Student Final GPA: " + student.getTranscript().calculateGPA());
+            System.out.println("Company Name:" + emp.getCompanyName());
+            System.out.println("Company Ranking:" + emp.getCompanyRanking());
+            System.out.println("-------------------");
             
             Feedback feedback = new Feedback(courseoffer.getCourse(), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100));
             
             feedbackList.add(feedback);
             
             }
-
+            System.out.println("\n");
         // Display 10 random students IDs and Final GPA for all of them
         for (int i = 0; i < 14; i++) {
             PersonDirectory pd = department.getPersonDirectory();
@@ -86,6 +95,9 @@ public class Info5001UniversityExample {
             StudentProfile student = sd.newStudentProfile(person);
             CourseLoad courseload = student.newCourseLoad("Fall2020");
             courseload.newSeatAssignment(courseoffer1); //register student in class
+            
+            AlumniProfile alumni = new AlumniProfile(student);
+            EmployementRecord emp = new EmployementRecord(alumni);
             
             // To calculate Final GPA for each student
             ArrayList<Seat> seatListWeb = courseoffer1.getSeatlist();
@@ -98,6 +110,9 @@ public class Info5001UniversityExample {
             }
             System.out.println("Student NUID: " + person.getPersonId());
             System.out.println("Student Final GPA: " + student.getTranscript().calculateGPA());
+            System.out.println("Company Name:" + emp.getCompanyName());
+            System.out.println("Company Ranking:" + emp.getCompanyRanking());
+            System.out.println("-------------------");
             
             Feedback feedback = new Feedback(courseoffer1.getCourse(), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100));
       
@@ -111,6 +126,7 @@ public class Info5001UniversityExample {
             for (Map.Entry<String, Double> feedEntry: feedbackEntry.entrySet()) {
                 String key = feedEntry.getKey();
                 double rating = feedEntry.getValue();
+                rating = Math.round(rating * 100.0) / 100.0;
                 System.out.println("Course: " + key + ", Rating: " + rating);
             }
         int total = department.calculateRevenuesBySemester("Fall2020");

@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package info5100.university.alumini;
+package info5100.university.alumni;
 
 import info5100.university.example.Persona.StudentProfile;
+import info5100.university.feedback.Feedback;
 import java.util.ArrayList;
 
 /**
@@ -16,14 +17,12 @@ public class AlumniProfile {
     
     StudentProfile studentProfile;
     ArrayList<CertificationRecord> certificationRecordList;
-    String companyName;
-    int yeadOfGraduation;
+    int yearOfGraduation;
+    ArrayList<EmployementRecord> employementHistory;
+    Feedback feedback;
 
-    public AlumniProfile(StudentProfile studentProfile, ArrayList<CertificationRecord> certificationRecordList, String companyName, int yeadOfGraduation) {
+    public AlumniProfile(StudentProfile studentProfile) {
         this.studentProfile = studentProfile;
-        this.certificationRecordList = certificationRecordList;
-        this.companyName = companyName;
-        this.yeadOfGraduation = yeadOfGraduation;
     }
 
     public StudentProfile getStudentProfile() {
@@ -41,20 +40,22 @@ public class AlumniProfile {
     public void setCertificationRecordList(ArrayList<CertificationRecord> certificationRecordList) {
         this.certificationRecordList = certificationRecordList;
     }
-
-    public String getCompanyName() {
-        return companyName;
+    
+    public int getYearOfGraduation() {
+        return yearOfGraduation;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setYearOfGraduation(int yearOfGraduation) {
+        this.yearOfGraduation = yearOfGraduation;
     }
 
-    public int getYeadOfGraduation() {
-        return yeadOfGraduation;
+    public void addNewCertificateRecord(AlumniProfile alumniProfile){
+        CertificationRecord certificate = new CertificationRecord(alumniProfile);
+        certificationRecordList.add(certificate);
     }
-
-    public void setYeadOfGraduation(int yeadOfGraduation) {
-        this.yeadOfGraduation = yeadOfGraduation;
+    
+    public void addNewEmployementRecord(AlumniProfile alumniProfile){
+        EmployementRecord employeeRecord = new EmployementRecord(alumniProfile);
+        employementHistory.add(employeeRecord);
     }
 }

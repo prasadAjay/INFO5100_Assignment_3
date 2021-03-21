@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package info5100.university.alumini;
+package info5100.university.alumni;
 
 import info5100.university.example.CourseCatalog.Course;
 
@@ -14,11 +14,11 @@ import info5100.university.example.CourseCatalog.Course;
 public class CertificationRecord {
     
     Course course;
-    AlumniProfile aluminiProfile;
+    AlumniProfile alumniProfile;
+    String issueDate;
     
-    public CertificationRecord(Course course, AlumniProfile aluminiProfile) {
-        this.course = course;
-        this.aluminiProfile = aluminiProfile;
+    public CertificationRecord(AlumniProfile alumniProfile) {
+        this.alumniProfile = alumniProfile;
     }
 
     public Course getCourse() {
@@ -29,11 +29,20 @@ public class CertificationRecord {
         this.course = course;
     }
 
+    public String getIssueDate() {
+        return issueDate;
+    }
+
+    public void setIssueDate(String issueDate) {
+        this.issueDate = issueDate;
+    }
+
     public AlumniProfile getAluminiProfile() {
-        return aluminiProfile;
+        return alumniProfile;
     }
 
     public void setAluminiProfile(AlumniProfile aluminiProfile) {
-        this.aluminiProfile = aluminiProfile;
+        this.alumniProfile = aluminiProfile;
     }
+    
 }
