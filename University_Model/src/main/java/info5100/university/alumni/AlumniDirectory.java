@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package info5100.university.alumini;
+package info5100.university.alumni;
 
+import info5100.university.example.CourseCatalog.Course;
 import info5100.university.example.Department.Department;
 import java.util.ArrayList;
 
@@ -17,9 +18,8 @@ public class AlumniDirectory {
     Department department;
     ArrayList<AlumniProfile> alumniList;
     
-    public AlumniDirectory(Department department, ArrayList<AlumniProfile> alumniList) {
+    public AlumniDirectory(Department department) {
         this.department = department;
-        this.alumniList = alumniList;
     }
 
     public Department getDepartment() {
@@ -36,5 +36,27 @@ public class AlumniDirectory {
 
     public void setAlumniList(ArrayList<AlumniProfile> alumniList) {
         this.alumniList = alumniList;
+    }
+    
+    public void addAlumniRecord(AlumniProfile alumniProfile) {
+        alumniList.add(alumniProfile);
+    }
+
+    public AlumniProfile searchAlumniByGradYear(int yearOfGraduation) {
+        for (AlumniProfile alumniProfile : alumniList) {
+            if (alumniProfile.getYearOfGraduation() == yearOfGraduation) {
+                return alumniProfile;
+            }
+        }
+        return null;
+    }
+    
+    public AlumniProfile findAlumni(String id) {
+        for (AlumniProfile alumniProfile : alumniList) {
+            if (alumniProfile.getStudentProfile().isMatch(id)) {
+                return alumniProfile;
+            }
+        }
+        return null;
     }
 }

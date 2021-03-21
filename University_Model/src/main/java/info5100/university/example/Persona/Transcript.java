@@ -52,6 +52,6 @@ public class Transcript {
                 totalGPA = SumOfCourses/NoOfCourses;
             }
         }
-        return totalGPA;
+        return Math.round(totalGPA * 100.0) / 100.0;
     }
 }

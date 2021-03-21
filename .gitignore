@@ -29,3 +29,4 @@ nbdist/
 # virtual machine crash logs
 hs_err_pid*
 /Assignment3/University_Model/target/
+/University_Model/target/
