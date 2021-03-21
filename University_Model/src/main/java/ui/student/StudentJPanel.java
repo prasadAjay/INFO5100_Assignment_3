@@ -3,18 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.alumni;
+package ui.student;
+
+import ui.Alumni.*;
 
 /**
  *
  * @author palak
  */
-public class AlumniJPanel extends javax.swing.JPanel {
+public class StudentJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form AlumniJPanel
      */
-    public AlumniJPanel() {
+    public StudentJPanel() {
         initComponents();
     }
 
@@ -29,22 +31,22 @@ public class AlumniJPanel extends javax.swing.JPanel {
 
         lblStudID = new javax.swing.JLabel();
         txtStudentID = new javax.swing.JTextField();
-        lblAlumni = new javax.swing.JLabel();
-        btnAlumniProfile = new javax.swing.JButton();
+        lblStudent = new javax.swing.JLabel();
+        btnStudentProfile = new javax.swing.JButton();
 
         lblStudID.setText("Enter Student ID:");
 
-        lblAlumni.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblAlumni.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAlumni.setText("Alumni Portal");
+        lblStudent.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblStudent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblStudent.setText("Student Portal");
 
-        btnAlumniProfile.setText("View Alumni Profile");
+        btnStudentProfile.setText("View Student Profile");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblAlumni, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblStudent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -54,29 +56,29 @@ public class AlumniJPanel extends javax.swing.JPanel {
                         .addComponent(txtStudentID, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(251, 251, 251)
-                        .addComponent(btnAlumniProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnStudentProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(174, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addComponent(lblAlumni)
+                .addComponent(lblStudent)
                 .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblStudID)
                     .addComponent(txtStudentID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addComponent(btnAlumniProfile)
+                .addComponent(btnStudentProfile)
                 .addContainerGap(270, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAlumniProfile;
-    private javax.swing.JLabel lblAlumni;
+    private javax.swing.JButton btnStudentProfile;
     private javax.swing.JLabel lblStudID;
+    private javax.swing.JLabel lblStudent;
     private javax.swing.JTextField txtStudentID;
     // End of variables declaration//GEN-END:variables
 }

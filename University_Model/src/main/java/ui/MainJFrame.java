@@ -31,6 +31,7 @@ public class MainJFrame extends javax.swing.JFrame {
         controlPanel = new javax.swing.JPanel();
         btnAdmin = new javax.swing.JButton();
         btnAlumni = new javax.swing.JButton();
+        btnStudent = new javax.swing.JButton();
         displayPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,29 +45,41 @@ public class MainJFrame extends javax.swing.JFrame {
 
         btnAlumni.setText("Alumni");
 
+        btnStudent.setText("Student");
+        btnStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStudentActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(btnAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, controlPanelLayout.createSequentialGroup()
-                        .addContainerGap(17, Short.MAX_VALUE)
-                        .addComponent(btnAlumni, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                    .addComponent(btnAlumni, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAdmin, btnAlumni, btnStudent});
+
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(154, 154, 154)
+                .addGap(166, 166, 166)
                 .addComponent(btnAdmin)
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
+                .addComponent(btnStudent)
+                .addGap(18, 18, 18)
                 .addComponent(btnAlumni)
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
+
+        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAdmin, btnAlumni, btnStudent});
 
         SplitPane.setLeftComponent(controlPanel);
 
@@ -100,6 +113,10 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdminActionPerformed
+
+    private void btnStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnStudentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,6 +157,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JSplitPane SplitPane;
     private javax.swing.JButton btnAdmin;
     private javax.swing.JButton btnAlumni;
+    private javax.swing.JButton btnStudent;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JPanel displayPanel;
     // End of variables declaration//GEN-END:variables
