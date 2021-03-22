@@ -33,6 +33,7 @@ public class MainJFrame extends javax.swing.JFrame {
         btnAlumni = new javax.swing.JButton();
         btnStudent = new javax.swing.JButton();
         displayPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,15 +84,24 @@ public class MainJFrame extends javax.swing.JFrame {
 
         SplitPane.setLeftComponent(controlPanel);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("University Model Implementation");
+
         javax.swing.GroupLayout displayPanelLayout = new javax.swing.GroupLayout(displayPanel);
         displayPanel.setLayout(displayPanelLayout);
         displayPanelLayout.setHorizontalGroup(
             displayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 618, Short.MAX_VALUE)
+            .addGroup(displayPanelLayout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(jLabel1)
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         displayPanelLayout.setVerticalGroup(
             displayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 535, Short.MAX_VALUE)
+            .addGroup(displayPanelLayout.createSequentialGroup()
+                .addGap(182, 182, 182)
+                .addComponent(jLabel1)
+                .addContainerGap(335, Short.MAX_VALUE))
         );
 
         SplitPane.setRightComponent(displayPanel);
@@ -160,5 +170,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnStudent;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JPanel displayPanel;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
