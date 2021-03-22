@@ -5,6 +5,8 @@
  */
 package info5100.university.example.CourseCatalog;
 
+import info5100.university.feedback.Feedback;
+
 /**
  *
  * @author kal bugrara
@@ -14,6 +16,10 @@ public class Course {
     String name;
     int credits;
     int price = 1500; //per credit hour
+    double courseRating;
+    
+    Feedback feedback;
+    
     public Course(String n, String numb, int ch){
         name = n;
         number = numb;
@@ -61,4 +67,22 @@ public class Course {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public Feedback getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(Feedback feedback) {
+        this.feedback = feedback;
+    }
+
+    public double getCourseRating() {
+        return courseRating;
+    }
+
+    public void setCourseRating(double courseRating) {
+        this.courseRating = courseRating;
+    }
+    
+    
 }
