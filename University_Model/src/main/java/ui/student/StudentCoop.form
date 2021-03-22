@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="lblFeedback" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCoop" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="320" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="lblCertification" linkSize="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCourses" linkSize="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCompany" linkSize="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblJob" linkSize="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblEmployment" linkSize="2" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="rdFullTime" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="rdHealth" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rdAed" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rdYes" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="rdIt" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="rdUserExperience" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rdNo" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="rdFinance" min="-2" max="-2" attributes="0"/>
+                          <Component id="rdInternship" min="-2" max="-2" attributes="0"/>
+                          <Component id="rdMachineLearning" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="rdNuWorks" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="rdSelf" min="-2" max="-2" attributes="0"/>
+                          <Component id="rdPartTime" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="255" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lblPosition" linkSize="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEmployer" linkSize="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txtEmployer" pref="344" max="32767" attributes="0"/>
+                          <Component id="txtPosition" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="342" max="-2" attributes="0"/>
+                      <Component id="btnSave" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <Component id="lblCoop" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblEmployer" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtEmployer" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblPosition" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPosition" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+              <Component id="lblFeedback" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblEmployment" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rdFullTime" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rdInternship" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rdPartTime" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblJob" linkSize="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="rdNuWorks" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rdSelf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblCompany" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rdHealth" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rdIt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rdFinance" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblCourses" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rdAed" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rdUserExperience" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rdMachineLearning" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblCertification" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rdYes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rdNo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="btnSave" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblCoop">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="24" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Co-op Update"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblEmployer">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Employer:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPosition">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Position:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtEmployer">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmployerActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPosition">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblFeedback">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="24" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Feedback Form"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblEmployment">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Type of Employment:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblJob">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="How did you obtain this job:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCompany">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Type of Company:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCourses">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Courses helped in securing job:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblCertification">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Any Certification done outside curriculum:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdFullTime">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Full-Time"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdInternship">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Internship"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdPartTime">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Part-Time"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdNuWorks">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="NuWorks"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdHealth">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Health"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdAed">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="AED"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdYes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="YES"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdSelf">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Self"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdIt">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="IT"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdNo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="NO"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdUserExperience">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="User Experience"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdFinance">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Finance"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rdMachineLearning">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Machine Learning"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSave">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Save and Continue"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
