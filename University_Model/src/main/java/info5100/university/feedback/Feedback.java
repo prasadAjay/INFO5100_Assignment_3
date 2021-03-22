@@ -19,6 +19,7 @@ public class Feedback {
     int projectScore;
     int midFinalTermScore;
     double averageRating = 0;
+    double feedbackRating;
     
     public Feedback (Course course, int assignmentScore, int quizScore, int projectScore, int midFinalTermScore) {
         this.assignemntsScore = assignmentScore;
@@ -76,4 +77,14 @@ public class Feedback {
     public void setAverageRating(double averageRating) {
         this.averageRating = (assignemntsScore + quizScore + projectScore + midFinalTermScore) / 4;
     }
+
+    public double getFeedbackRating() {
+        return feedbackRating;
+    }
+
+    public void setFeedbackRating(double feedbackRating) {
+        this.feedbackRating = feedbackRating;
+    }
+    
+    
 }

@@ -5,17 +5,46 @@
  */
 package ui;
 
+import com.github.javafaker.Faker;
+import info5100.university.alumni.AlumniDirectory;
+import info5100.university.alumni.AlumniProfile;
+import info5100.university.alumni.EmployementRecord;
+import info5100.university.example.CourseCatalog.Course;
+import info5100.university.example.CourseCatalog.CourseCatalog;
+import info5100.university.example.CourseSchedule.CourseLoad;
+import info5100.university.example.CourseSchedule.CourseOffer;
+import info5100.university.example.CourseSchedule.CourseSchedule;
+import info5100.university.example.CourseSchedule.Seat;
+import info5100.university.example.Department.Department;
+import static info5100.university.example.Info5001UniversityExample.getAverageFeebackRating;
+import info5100.university.example.Persona.Person;
+import info5100.university.example.Persona.PersonDirectory;
+import info5100.university.example.Persona.StudentDirectory;
+import info5100.university.example.Persona.StudentProfile;
+import info5100.university.feedback.Feedback;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import ui.Admin.AdminJPanel;
+
 /**
  *
  * @author palak
  */
+
 public class MainJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MainJFrame
      */
+    
+    AlumniDirectory alumniDirec;
+    CourseCatalog courseCatalog;
+    
     public MainJFrame() {
         initComponents();
+//        alumniDirec = new AlumniDirectory();
+//        courseCatalog = new CourseCatalog();
     }
 
     /**
@@ -111,7 +140,10 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here
+        AdminJPanel adminPanel = new AdminJPanel(alumniDirec,courseCatalog);
+        SplitPane.setRightComponent(adminPanel);
+        
     }//GEN-LAST:event_btnAdminActionPerformed
 
     private void btnStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentActionPerformed
@@ -145,6 +177,108 @@ public class MainJFrame extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+                Faker fakerPkg = new Faker();
+        
+        Department department = new Department("Information Systems");
+
+        CourseCatalog courseCatalog = new CourseCatalog(department);
+        Course course = department.newCourse("app eng", "info 5100", 4);
+        
+        Course course1 = department.newCourse("web eng", "info 6150", 4);
+
+        CourseSchedule courseschedule = department.newCourseSchedule("Fall2020");
+
+        CourseOffer courseoffer = courseschedule.newCourseOffer("info 5100");
+        
+        CourseOffer courseoffer1 = courseschedule.newCourseOffer("info 6150");
+
+        courseoffer.generatSeats(10);
+        
+        courseoffer1.generatSeats(14);
+        
+        ArrayList<Feedback> feedbackList = new ArrayList<Feedback>();
+
+        alumniDirec = new AlumniDirectory(department);
+        
+        // Display 10 random students IDs and Final GPA for all of them
+        for (int i = 0; i < 10; i++) {
+            PersonDirectory pd = department.getPersonDirectory();
+            Person person = pd.newPerson(fakerPkg.number().digits(9));
+            StudentDirectory sd = department.getStudentDirectory();
+            StudentProfile student = sd.newStudentProfile(person);
+            CourseLoad courseload = student.newCourseLoad("Fall2020");
+            courseload.newSeatAssignment(courseoffer); //register student in class
+            
+            AlumniProfile alumni = new AlumniProfile(student); 
+            EmployementRecord emp = new EmployementRecord(alumni);
+        
+            // To calculate Final GPA for each student
+            ArrayList<Seat> seatListAED = courseoffer.getSeatlist();
+            for (Seat seat : seatListAED) {
+                if (seat.isOccupied()) {
+                    double min = 2.0;
+                    double max = 4.0;
+                    seat.getSeatassignment().setGrade(min + (fakerPkg.random().nextDouble() * (max - min)));
+                }
+            }
+            System.out.println("Student NUID: " + person.getPersonId());
+            System.out.println("Student Final GPA: " + student.getTranscript().calculateGPA());
+            System.out.println("Company Name:" + emp.getCompanyName());
+            System.out.println("Company Ranking:" + emp.getCompanyRanking());
+            System.out.println("-------------------");
+            
+            Feedback feedback = new Feedback(courseoffer.getCourse(), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100));
+            
+            feedbackList.add(feedback);
+            
+            }
+            System.out.println("\n");
+        // Display 10 random students IDs and Final GPA for all of them
+        for (int i = 0; i < 14; i++) {
+            PersonDirectory pd = department.getPersonDirectory();
+            Person person = pd.newPerson(fakerPkg.number().digits(9));
+            StudentDirectory sd = department.getStudentDirectory();
+            StudentProfile student = sd.newStudentProfile(person);
+            CourseLoad courseload = student.newCourseLoad("Fall2020");
+            courseload.newSeatAssignment(courseoffer1); //register student in class
+            
+            AlumniProfile alumni = new AlumniProfile(student);
+            EmployementRecord emp = new EmployementRecord(alumni);
+            
+            // To calculate Final GPA for each student 
+            ArrayList<Seat> seatListWeb = courseoffer1.getSeatlist();
+            for (Seat seat : seatListWeb) {
+                if (seat.isOccupied()) {
+                    double min = 2.0;
+                    double max = 4.0;
+                    seat.getSeatassignment().setGrade(min + (fakerPkg.random().nextDouble() * (max - min)));
+                }
+            }
+            System.out.println("Student NUID: " + person.getPersonId());
+            System.out.println("Student Final GPA: " + student.getTranscript().calculateGPA());
+            System.out.println("Company Name:" + emp.getCompanyName());
+            System.out.println("Company Ranking:" + emp.getCompanyRanking());
+
+            System.out.println("-------------------");
+            
+            Feedback feedback = new Feedback(courseoffer1.getCourse(), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100));
+      
+            feedbackList.add(feedback);
+        }
+      
+        HashMap<String, Double> feedbackEntry = new HashMap<String, Double>();
+            feedbackEntry.put(courseoffer.getCourse().getName(), getAverageFeebackRating(feedbackList, courseoffer));
+            feedbackEntry.put(courseoffer1.getCourse().getName(), getAverageFeebackRating(feedbackList, courseoffer1));
+            
+            for (Map.Entry<String, Double> feedEntry: feedbackEntry.entrySet()) {
+                String key = feedEntry.getKey();
+                double rating = feedEntry.getValue();
+                rating = Math.round(rating * 100.0) / 100.0;
+                course.setCourseRating(rating);
+                System.out.println("Course: " + key + ", Rating: " + rating);
+            }
+        int total = department.calculateRevenuesBySemester("Fall2020");
+        System.out.print("Total: " + total);
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

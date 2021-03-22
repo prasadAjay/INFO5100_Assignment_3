@@ -19,7 +19,7 @@ public class EmployementRecord {
     String companyName;
     String Position;
     String startDate;
-    String endDate;
+    double salary;
     String companyRanking;
     String jobRole;
 
@@ -62,12 +62,14 @@ public class EmployementRecord {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
-        return endDate;
+    public double getSalary() {
+        
+        salary = fakerPkg.number().numberBetween(100000,500000);
+        return salary;
     }
 
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
     public String getJobRole() {
