@@ -5,6 +5,15 @@
  */
 package ui.Admin;
 
+import info5100.university.alumni.AlumniDirectory;
+import info5100.university.alumni.AlumniProfile;
+import info5100.university.example.CourseCatalog.Course;
+import info5100.university.example.CourseCatalog.CourseCatalog;
+import info5100.university.example.Persona.StudentProfile;
+import info5100.university.feedback.Feedback;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author palak
@@ -14,8 +23,15 @@ public class AdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AdminJPanel
      */
-    public AdminJPanel() {
+    
+    AlumniDirectory alumniDirectory;
+    CourseCatalog courseCatalog;
+    Feedback feedback;
+    
+    public AdminJPanel(AlumniDirectory alumniDirec, CourseCatalog courseCatalog) {
         initComponents();
+        this.alumniDirectory = alumniDirec;
+        this.courseCatalog = courseCatalog;
     }
 
     /**
@@ -29,8 +45,11 @@ public class AdminJPanel extends javax.swing.JPanel {
 
         btnCourseRanking = new javax.swing.JButton();
         btnAlumniRanking1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblAlumni = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblCourse = new javax.swing.JTable();
 
         btnCourseRanking.setText("View Top Rated Courses");
         btnCourseRanking.addActionListener(new java.awt.event.ActionListener() {
@@ -40,58 +59,142 @@ public class AdminJPanel extends javax.swing.JPanel {
         });
 
         btnAlumniRanking1.setText("View Top Ranked Alumni");
+        btnAlumniRanking1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlumniRanking1ActionPerformed(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Admin Portal");
+
+        tblAlumni.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Name", "Salary", "Company Name", "Course Taken"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblAlumni);
+
+        tblCourse.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Course", "Rating"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tblCourse);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(btnAlumniRanking1)
-                        .addGap(96, 96, 96)
+                        .addGap(323, 323, 323)
                         .addComponent(btnCourseRanking))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                        .addGap(151, 151, 151)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(307, 307, 307)
+                        .addComponent(btnAlumniRanking1)))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAlumniRanking1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCourseRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(102, 102, 102)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addGap(81, 81, 81)
+                .addComponent(jLabel1)
+                .addGap(70, 70, 70)
+                .addComponent(btnAlumniRanking1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(btnCourseRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCourseRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCourseRankingActionPerformed
         // TODO add your handling code here:
+        refreshCourseRankingTable();
     }//GEN-LAST:event_btnCourseRankingActionPerformed
+
+    private void btnAlumniRanking1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlumniRanking1ActionPerformed
+        // TODO add your handling code here:
+        refreshAlumniRankingTable();
+    }//GEN-LAST:event_btnAlumniRanking1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlumniRanking1;
     private javax.swing.JButton btnCourseRanking;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tblAlumni;
+    private javax.swing.JTable tblCourse;
     // End of variables declaration//GEN-END:variables
+
+    private void refreshAlumniRankingTable() {
+        DefaultTableModel model = (DefaultTableModel) tblAlumni.getModel();
+        model.setRowCount(0);
+
+        for (AlumniProfile p : alumniDirectory.getAlumniList()) {
+            Object row[] = new Object[4];
+            row[0] = p.getStudentProfile().getPerson().getName();
+            row[1] = p.getEmployementRecord().getSalary();
+            row[2] = p.getEmployementRecord().getCompanyName();
+            row[4] = p.getCourse().getName();
+            model.addRow(row);
+        }
+
+    }
+
+    private void refreshCourseRankingTable() {
+        DefaultTableModel model = (DefaultTableModel) tblCourse.getModel();
+        model.setRowCount(0);
+        
+            for (Course p : courseCatalog.getCourseList()) {
+            Object row[] = new Object[4];
+            row[0] = p.getName();
+            row[1] = p.getCourseRating();
+            model.addRow(row);
+        }
+    }
 }

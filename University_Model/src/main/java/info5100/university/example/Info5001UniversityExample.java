@@ -63,7 +63,7 @@ public class Info5001UniversityExample {
             CourseLoad courseload = student.newCourseLoad("Fall2020");
             courseload.newSeatAssignment(courseoffer); //register student in class
             
-            AlumniProfile alumni = new AlumniProfile(student);
+            AlumniProfile alumni = new AlumniProfile(student); 
             EmployementRecord emp = new EmployementRecord(alumni);
         
             // To calculate Final GPA for each student
@@ -99,7 +99,7 @@ public class Info5001UniversityExample {
             AlumniProfile alumni = new AlumniProfile(student);
             EmployementRecord emp = new EmployementRecord(alumni);
             
-            // To calculate Final GPA for each student
+            // To calculate Final GPA for each student 
             ArrayList<Seat> seatListWeb = courseoffer1.getSeatlist();
             for (Seat seat : seatListWeb) {
                 if (seat.isOccupied()) {
@@ -112,6 +112,7 @@ public class Info5001UniversityExample {
             System.out.println("Student Final GPA: " + student.getTranscript().calculateGPA());
             System.out.println("Company Name:" + emp.getCompanyName());
             System.out.println("Company Ranking:" + emp.getCompanyRanking());
+
             System.out.println("-------------------");
             
             Feedback feedback = new Feedback(courseoffer1.getCourse(), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100), fakerPkg.number().numberBetween(10,100));
@@ -127,6 +128,7 @@ public class Info5001UniversityExample {
                 String key = feedEntry.getKey();
                 double rating = feedEntry.getValue();
                 rating = Math.round(rating * 100.0) / 100.0;
+                course.setCourseRating(rating);
                 System.out.println("Course: " + key + ", Rating: " + rating);
             }
         int total = department.calculateRevenuesBySemester("Fall2020");
