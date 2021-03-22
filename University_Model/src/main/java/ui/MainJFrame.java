@@ -208,7 +208,7 @@ public class MainJFrame extends javax.swing.JFrame {
         
         ArrayList<Feedback> feedbackList = new ArrayList<Feedback>();
 
-        alumniDirec = new AlumniDirectory(department);
+        //alumniDirec = new AlumniDirectory(department);
         
         // Display 10 random students IDs and Final GPA for all of them
         for (int i = 0; i < 10; i++) {
